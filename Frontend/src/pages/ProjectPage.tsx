@@ -1,6 +1,8 @@
 import React, { useState, type FormEvent } from 'react';
 import { Eye, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { createProject } from '../controller/ProjectController';
+
 export const ProjectPage: React.FC = () => {
   const [projectName, setProjectName] = useState<string>("");
   const [projectDescription, setProjectDescription] = useState<string>("");
@@ -11,18 +13,39 @@ export const ProjectPage: React.FC = () => {
    * 
    * @param event The form event
    */
-  const onSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+    event.preventDefault();
     /**
-     * TODO:
-     * Complete the method by calling the `createProject() method in ProjectController.ts`
+     * TODO: Complete the method by calling the `createProject() method in ProjectController.ts`
      * After creating project, verify that the server response is 200 before alerting the user and redirecting to the '/project-details' page
      * 
      * BONUS - Add simple validation to the form inputs to not allow empty string and display an error alert
      */
-    // alert("Successfully created project");
-    // navigate('/project-details');
+    
+    // BONUS: Form validation
+    if (!projectName.trim() || !projectDescription.trim()) {
+      alert('Please fill in all required fields');
+      return;
+    }
 
-    event.preventDefault();
+    try {
+      // Call createProject API
+      const newProject = await createProject({
+        name: projectName.trim(),
+        description: projectDescription.trim()
+      });
+
+      // Check if project was created successfully (createProject returns the project object)
+      if (newProject && newProject.id) {
+        alert("Successfully created project");
+        navigate('/project-details');
+      } else {
+        alert("Failed to create project. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error creating project:', error);
+      alert("An error occurred while creating the project. Please try again.");
+    }
   }
 
   return (
