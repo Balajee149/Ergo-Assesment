@@ -1,10 +1,10 @@
-# Ergo Code Assessment ✅ COMPLETED
 
 DEMO UI VIDEO: https://drive.google.com/file/d/1BwuhGbKrj0aHvaVsnY-ZdwB-ilotwFzC/view?usp=sharing
-Name:Balajee
-Reg:RA2211031010022
-Phone number:+917903856306
-Clg:SRM UNIVERSITY
+## Personal Details
+- Name: Balajee
+- Reg No: RA2211031010022
+- Phone Number:+917903856306
+- Clg: SRM UNIVERSITY
 
 ## 🎯 Project Overview
 
@@ -52,16 +52,6 @@ npm run dev
 - **Project Management**: http://localhost:5173
 - **Project Details**: http://localhost:5173/project-details
 - **Real-time Chat**: http://localhost:5173/chat
-
-
-## 📋 API Documentation
-
-### **REST Endpoints**
-- `POST /projects` - Create new project
-- `GET /projects` - Retrieve all projects
-
-### **WebSocket**
-- `ws://localhost:8080` - Real-time chat server
 
 ## 🏆 Completed Tasks Summary
 
