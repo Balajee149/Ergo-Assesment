@@ -1,6 +1,10 @@
 # Ergo Code Assessment ✅ COMPLETED
 
 DEMO UI VIDEO: https://drive.google.com/file/d/1BwuhGbKrj0aHvaVsnY-ZdwB-ilotwFzC/view?usp=sharing
+Name:Balajee
+Reg:RA2211031010022
+Phone number:+917903856306
+Clg:SRM UNIVERSITY
 
 ## 🎯 Project Overview
 
